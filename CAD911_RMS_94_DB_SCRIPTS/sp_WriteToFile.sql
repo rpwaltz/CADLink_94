@@ -1,4 +1,4 @@
-USE [CAD911_KPD_94]
+USE [CAD911_RMS_94]
 GO
 /****** Object:  StoredProcedure [dbo].[sp_WriteToFile]    Script Date: 6/4/2020 10:33:17 AM ******/
 SET ANSI_NULLS ON
