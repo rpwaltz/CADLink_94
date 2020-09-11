@@ -9,14 +9,14 @@ GO
 
 CREATE PROCEDURE [dbo].[sp_CADLink_Table2XML]
 AS
-
+BEGIN
 -- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- Section 1. Proces each record in EVENT table.
 -- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Declare @FilePath varchar(100);
 
-set @FilePath = 'D:\VisionAIR Importers Drop Folder\CFS\'
+set @FilePath = 'D:\CADLink\CFS\'
 
 DECLARE @xmlFile varchar(100);
 DECLARE @LogFile varchar(100);
@@ -116,5 +116,9 @@ EXEC sp_WriteToFile @LogFile, @tmpmsg;
 Close cr_Event;
 
 Deallocate cr_Event;
+END;
+GO
 
-
+GRANT EXECUTE ON [dbo].[sp_CADLink_Table2XML] TO sqlconn ;
+GRANT EXECUTE ON [dbo].[sp_CADLink_Table2XML] TO [KNOXVILLE\sqlconn] ;
+GO

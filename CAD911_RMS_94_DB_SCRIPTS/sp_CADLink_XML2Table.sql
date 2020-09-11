@@ -9,7 +9,7 @@ GO
 
 CREATE PROCEDURE [dbo].[sp_CADLink_XML2Table]
 AS
-
+BEGIN
 
 -- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- Section 1. Save each XML file into the DirectoryTree in tempDB.
@@ -923,3 +923,9 @@ EXEC sp_WriteToFile @LogFile, @tmpmsg
 Close cr_xmlData;
 Deallocate cr_xmlData;
 
+END;
+GO
+
+GRANT EXECUTE ON [dbo].[sp_CADLink_XML2Table] TO sqlconn ;
+GRANT EXECUTE ON [dbo].[sp_CADLink_XML2Table] TO [KNOXVILLE\sqlconn] ;
+GO

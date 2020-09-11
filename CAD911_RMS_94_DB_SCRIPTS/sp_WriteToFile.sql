@@ -34,4 +34,8 @@ EXECUTE master.sys.sp_OADestroy @FileID
 EXECUTE master.sys.sp_OADestroy @OLE 
  
 END 
- 
+GO
+
+GRANT EXECUTE ON [dbo].[sp_WriteToFile] TO <USER> ;
+GRANT EXECUTE ON [dbo].[sp_WriteToFile] TO  [<DOMAIN>\<USER>] ;
+GO

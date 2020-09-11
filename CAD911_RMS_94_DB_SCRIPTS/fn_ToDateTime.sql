@@ -26,3 +26,7 @@ BEGIN
     RETURN @datstr;
 END;
 GO
+
+GRANT EXECUTE ON [dbo].[fn_ToDateTime] TO <USER> ;
+GRANT EXECUTE ON [dbo].[fn_ToDateTime] TO [<DOMAIN>\<USER> ] ;
+GO
